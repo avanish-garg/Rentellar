@@ -1,0 +1,6 @@
+node_modules/
+build/
+*.log
+lit_model.pth
+model.safetensors
+.env
