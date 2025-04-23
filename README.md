@@ -1,11 +1,11 @@
-# Aptorent - Blockchain-Based Rental Platform
+# Rentellar - Stellar-Based Rental Platform
 
-Aptorent is a decentralized rental platform built on the Aptos blockchain that enables users to rent and lend items securely using smart contracts.
+Rentellar is a decentralized rental platform built on the Stellar blockchain that enables users to rent and lend items securely using smart contracts.
 
 ## Features
 
 - 🔐 Secure authentication with JWT
-- 💰 Blockchain-based payments and deposits
+- 💰 Stellar blockchain-based payments and deposits
 - 📝 Smart contract-based rental agreements
 - 📧 Email verification and OTP system
 - 🖼️ Image upload for rental items
@@ -16,16 +16,17 @@ Aptorent is a decentralized rental platform built on the Aptos blockchain that e
 ## Tech Stack
 
 ### Backend
-- Node.js with Express
+- Node.js with Express and TypeScript
 - MongoDB for database
 - JWT for authentication
-- Aptos blockchain integration
+- Stellar SDK for blockchain integration
 - Winston for logging
 - Multer for file uploads
 - Nodemailer for email services
 
 ### Frontend
-- React.js
+- React.js with TypeScript
+- Vite for build tooling
 - Tailwind CSS
 - Axios for API calls
 - React Router for navigation
@@ -33,17 +34,17 @@ Aptorent is a decentralized rental platform built on the Aptos blockchain that e
 
 ## Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js (v18.18 or higher)
 - MongoDB
-- Aptos wallet
+- Stellar testnet account
 - npm or yarn
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/aptorent.git
-cd aptorent
+git clone https://github.com/yourusername/rentellar.git
+cd rentellar
 ```
 
 2. Install backend dependencies:
@@ -54,7 +55,7 @@ npm install
 
 3. Install frontend dependencies:
 ```bash
-cd ../../frontend
+cd ../frontend
 npm install
 ```
 
@@ -74,11 +75,9 @@ JWT_EXPIRES_IN=7d
 # Frontend URL
 FRONTEND_URL=http://localhost:5173
 
-# Blockchain Configuration
-APTOS_NODE_URL=https://fullnode.testnet.aptoslabs.com
-OWNER_PRIVATE_KEY=your_private_key
-CONTRACT_ADDRESS=your_contract_address
-ADMIN_WALLET_ADDRESS=your_admin_wallet
+# Stellar Configuration
+STELLAR_NETWORK=TESTNET
+ADMIN_SECRET_KEY=your_admin_secret_key
 
 # Email Configuration
 EMAIL_HOST=smtp.gmail.com
@@ -86,11 +85,6 @@ EMAIL_PORT=587
 EMAIL_USER=your_email
 EMAIL_PASS=your_email_password
 ADMIN_EMAIL=your_admin_email
-
-# Pinata Configuration
-PINATA_API_KEY=your_pinata_api_key
-PINATA_SECRET_API_KEY=your_pinata_secret_key
-PINATA_JWT=your_pinata_jwt
 ```
 
 ## Running the Application
@@ -98,7 +92,7 @@ PINATA_JWT=your_pinata_jwt
 1. Start the backend server:
 ```bash
 cd backend
-npm start
+npm run dev
 ```
 
 2. Start the frontend development server:
@@ -137,6 +131,31 @@ The application will be available at:
 - Email verification
 - OTP-based rental completion
 
+## Stellar Integration
+
+The platform uses Stellar's blockchain features for:
+- Creating escrow accounts for rentals
+- Processing rental payments
+- Managing security deposits
+- Handling refunds
+- Multi-signature transactions
+
+## Development
+
+### Frontend Development
+The frontend uses Vite with React for fast development:
+- Hot Module Replacement (HMR)
+- TypeScript support
+- ESLint configuration
+- Tailwind CSS for styling
+
+### Backend Development
+The backend uses TypeScript for better type safety and development experience:
+- Strong typing for API responses
+- Interface definitions for models
+- Type-safe database operations
+- Stellar SDK integration with TypeScript
+
 ## Contributing
 
 1. Fork the repository
@@ -151,7 +170,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Aptos blockchain team
+- Stellar Development Foundation
 - MongoDB Atlas
-- Pinata IPFS
 - All contributors and maintainers
